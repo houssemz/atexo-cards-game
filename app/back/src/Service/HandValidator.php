@@ -18,7 +18,7 @@ final readonly class HandValidator implements HandValidatorInterface
 
         $hand = [];
         foreach ($cards as $card) {
-            if (!isset($card['color'], $card['value'])) {
+            if (!isset($card['color']) || !isset($card['value'])) {
                 throw new \LogicException('Every Card should have a color and a value to can tree hand');
             }
 

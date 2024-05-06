@@ -39,7 +39,7 @@ final class CardControllerTest extends WebTestCase
             [ { "color": "Pique", "value": "Dame" }, { "color": "Trefle", "value": "As" }, { "color": "Coeur", "value": "Roi" }, { "color": "Pique", "value": "5" }, { "color": "Carreaux", "value": "8" }, { "color": "Trefle", "value": "Roi" }, { "color": "Coeur", "value": "5" }, { "color": "Coeur", "value": "8" }, { "color": "Carreaux", "value": "9" }, { "color": "Coeur", "value": "6" } ]
             JSON;
 
-        $client->request(method: 'GET', uri: '/api/sort', parameters: ['hand' => $json]);
+        $client->request(method: 'POST', uri: '/api/sort', content: $json);
 
         $this->assertResponseIsSuccessful();
         $this->assertResponseHeaderSame('content-type', 'application/json');

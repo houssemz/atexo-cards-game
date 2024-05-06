@@ -31,18 +31,15 @@ final class CardController extends AbstractController
     /**
      * @throws \JsonException
      */
-    #[Route('/sort', name: 'sort_hand', methods: Request::METHOD_GET)]
+    #[Route('/sort', name: 'sort_hand')]
     public function getSortedHand(RequestStack $requestStack): JsonResponse
     {
         $request = $requestStack->getCurrentRequest();
-        $hand = $request->get('hand');
+        $hand = $request->getContent();
         if (!$hand) {
             throw new BadRequestException('You can not sort an empty hand!');
         }
 
-        //        return new JsonResponse($this->handService->sortHand(json_decode($hand, true, flags: JSON_THROW_ON_ERROR)));
-        //        $hand = json_encode($this->handService->getHand(10));
-        //
         return new JsonResponse($this->handService->sortHand($this->validator->validate($hand)));
     }
 }
