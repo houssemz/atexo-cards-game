@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* Assurez-vous que la hauteur de la vue est définie */
+}
+
+.centered-div {
+  /* Styles supplémentaires pour la div centrée */
+}
+
+.btn {
+  color: #fff;
+  display: inline-block;
+  border: 1px solid transparent;
+  padding: 0.3rem 0.7rem;
+  /* font-size: 1rem; */
+  line-height: 1.5;
+  border-radius: 0.25rem;
+}
+
+.info {
+  background-color: #10525a;
+  border-color: #10525a;
+}
+
+.success {
+  background-color: #186829;
+  border-color: #186829;
+}
+
+.card {
+  width: 70px;
+  margin-right: 19px;
+}
+
+#sort-hand {
+  margin-top: 29px;
+}

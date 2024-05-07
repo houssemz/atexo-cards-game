@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="centered-div">
+    <h1>Wellcome to the super card game!</h1>
+    <button type="button" class="btn info" (click)="getCards()">
+      Afficher
+    </button>
+
+    <div>
+      <img
+        *ngFor="let card of cards"
+        class="card"
+        src="/assets/cards/{{ card.color }}/{{ card.value }}.png"
+        alt="{{ card.color }}/{{ card.value }}"
+      />
+    </div>
+
+    <button
+      type="button"
+      class="btn success"
+      id="sort-hand"
+      (click)="sortCards()"
+    >
+      Trier
+    </button>
+
+    <div>
+      <img
+        *ngFor="let sortedCard of sortedCards"
+        class="card"
+        src="/assets/cards/{{ sortedCard.color }}/{{ sortedCard.value }}.png"
+        alt="{{ sortedCard.color }}/{{ sortedCard.value }}"
+      />
+    </div>
+  </div>
+</div>

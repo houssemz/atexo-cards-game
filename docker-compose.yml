@@ -1,6 +1,19 @@
 version: "3.9"
 
 services:
+
+  front:
+    build:
+      context: ./docker/angular
+      target: builder
+    volumes:
+      - ./app/front:/project
+      - /project/node_modules
+    ports:
+      - "4200:4200"
+    networks:
+      - atexo
+
   php:
     build:
       context: ./docker/php
