@@ -29,7 +29,15 @@ Run the following command and simply wait a moment for the container creation to
 >atexo-test-front-1  | ✔ Compiled successfully.
 
 ```bash
+# Build containers
  docker-compose up --build
+ ```
+
+Open another tab in your terminal and simply run the following command:
+
+ ```bash
+ # Install back dependencies
+ docker-compose exec php /bin/sh -c "cd back && composer -V && composer i"
 ```
 
 ### Let's play!
